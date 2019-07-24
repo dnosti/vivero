@@ -25,6 +25,6 @@ $ mvn clean
 #### Eliminar dependencias en frontend:
 
 ```
-cd frontend
-rm -r node_modules
+$ cd frontend
+$ rm -r node_modules
 ```

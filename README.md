@@ -1,21 +1,21 @@
 # Vivero
 Trabajo práctico: Taller de Programación IV.
 
-#### Instalar dependencias en el backend:
+#### Instalar dependencias en backend:
 
 ```
 $ cd backend
 $ mvn package
 ```
 
-#### Instalar dependencias en el frontend:
+#### Instalar dependencias en frontend:
 
 ```ash
 $ cd frontend
 $ npm install
 ```
 
-#### Eliminar dependencias en el backend:
+#### Eliminar dependencias en backend:
 
 ```
 $ cd backend

@@ -1,0 +1,27 @@
+<ul id="menu">
+    <li data-menuanchor="fourthPage"><a href="#fourthPage">Acceder</a></li>
+    <li data-menuanchor="thirdPage"><a href="#thirdPage">Acerca de</a></li>
+    <li data-menuanchor="secondPage"><a href="#secondPage">Estado Actual</a></li>
+    <li data-menuanchor="firstPage"><a href="#firstPage">Inicio</a></li>
+</ul>
+
+<div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
+    <div class="section" id="section0">
+        <video id="myVideo" loop muted data-autoplay>
+			<source src="/assets/videos/video2.mp4" type="video/mp4">
+            <!-- <source src="/assets/videos/video3.webm" type="video/webm"> -->                
+		</video>
+		<div class="layer">
+			<img class="logo" data-src="/assets/images/logo_horizontal.png">
+			<h1>Vivero | Versión 1.0</h1>
+		</div>
+    </div>
+      <!-- <div class="section" (click)="fullpage_api.moveSectionDown()">Some section2</div> -->
+      <div class="section" id="section1">
+          <div class="slide">Estado 1</div>
+          <div class="slide">Estado 2</div>
+          <div class="slide">Estado 3</div>
+          <div class="slide">Estado 4</div>
+      </div>
+      <div class="section" id="section2" (click)="fullpage_api.moveTo('secondPage', 2)">Acerca de</div>
+</div>

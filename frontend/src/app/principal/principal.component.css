@@ -1,0 +1,155 @@
+/* Style for our header texts
+* --------------------------------------- */
+h1 {
+    font-size: 0.8em;
+    font-family: arial,helvetica;
+    color: #fff;
+    margin:0;
+    padding:0;
+}
+
+/* Logo size
+* --------------------------------------- */
+.logo {
+    width: 65%;
+}
+
+/* Centered texts in each section
+* --------------------------------------- */
+.section{
+    text-align:center;
+    
+    overflow: hidden;
+}
+
+#myVideo{
+    position: absolute; 
+    right: 0;
+    bottom: 0;
+    top:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-color: black; /* in case the video doesn't fit the whole page*/
+    background-image: url("/assets/images/video.mp4");
+    background-position: center center;
+    background-size: contain;
+    object-fit: cover; /*cover video background */
+    z-index:3;
+}
+
+/* Layer with position absolute in order to have it over the video
+* --------------------------------------- */
+#section0 .layer{
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    left: 0;
+    top: 23%;
+
+    /*
+    * Preventing flicker on some browsers
+    * See http://stackoverflow.com/a/36671466/1081396  or issue #183
+    */
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+/*solves problem with overflowing video in Mac with Chrome */
+#section0{
+    overflow: hidden;
+}
+
+/* Bottom menu
+* --------------------------------------- */
+/*
+#infoMenu li a {
+    color: #fff;
+}
+*/
+
+/* Hiding video controls
+* See: https://css-tricks.com/custom-controls-in-html5-video-full-screen/
+* --------------------------------------- */
+video::-webkit-media-controls {
+    display:none !important;
+}
+
+/* Background Section 1 & 2
+* --------------------------------------- */
+#section1 {
+    background-color: rgb(109, 146, 35);
+}
+
+#section2 {
+    background-color: rgb(71, 97, 19);
+    /* background-color: #687C68; */
+}
+
+/* Background-image for Section 0
+* --------------------------------------- */
+/* 
+#section0 {
+    background-size: cover;
+    background-image: url("/assets/images/fondo.jpeg");
+}
+*/
+
+/* Menu
+* --------------------------------------- */
+/* .section {
+    text-align:center;
+    font-size: 3em;
+    } */
+    
+#menu li {       
+    display:inline-block;
+    float: right;
+    margin: 10px;
+    color: orange;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+#menu li.active{
+    border-bottom-style: solid;
+    border-bottom-color:orange;
+    color: orange;
+}
+
+#menu li a{
+    text-decoration:none;
+    color: orange;
+}
+
+#menu li.active a:hover{
+    color: orange;
+}
+
+#menu li:hover{
+    border-bottom-style: solid;
+    border-bottom-color:orange;
+}
+
+#menu li a,
+#menu li.active a{
+    padding: 9px 18px;
+    display:block;
+}
+
+#menu li.active a{
+    color: orange;
+}
+
+#menu{
+    position: fixed;      
+    top:0;
+    left:0;
+    height: 65px;
+    z-index: 70;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}

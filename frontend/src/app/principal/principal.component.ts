@@ -9,6 +9,8 @@ export class PrincipalComponent implements OnInit {
   config: any;
   fullpage_api: any;
 
+  verdadero: boolean = false;
+
   constructor() {
 
     // for more details on config options please visit fullPage.js docs
@@ -31,6 +33,11 @@ export class PrincipalComponent implements OnInit {
 
   getRef(fullPageRef) {
     this.fullpage_api = fullPageRef;
+  }
+
+  estadoActual(valor: boolean) {
+    this.verdadero = valor;
+    console.log(this.verdadero);
   }
 
   ngOnInit() {

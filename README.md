@@ -24,8 +24,17 @@ $ rm -r node_modules    /* para quitar */
 
 #### Otras dependencias necesarias en frontend:
 
-fullPage.js: https://github.com/alvarotrigo/angular-fullpage
+fullPage.js: https://github.com/alvarotrigo/angular-fullpage  
+Bootstrap: https://getbootstrap.com/
 
 ```
 $ npm install @fullpage/angular-fullpage
+$ npm install bootstrap jquery popper
+```
+Agregar en angular.json:
+
+```
+"styles": [
+  "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+],
 ```

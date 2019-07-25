@@ -1,30 +1,29 @@
+![](/home/dardo/vivero/logo_vivero.png)
+
 # Vivero
+
 Trabajo práctico: Taller de Programación IV.
 
-#### Instalar dependencias en backend:
+#### Instalar y quitar dependencias en backend:
 
 ```
-$ cd backend
-$ mvn package
+$ mvn package				/* para instalar */
+$ mvn clean					/* para quitar */
 ```
 
-#### Instalar dependencias en frontend:
-
-```ash
-$ cd frontend
-$ npm install
-```
-
-#### Eliminar dependencias en backend:
+#### Instalar y quitar dependencias en frontend:
 
 ```
-$ cd backend
-$ mvn clean
+$ npm install				/* para instalar */
+$ rm -r node_modules		/* para quitar */
 ```
 
-#### Eliminar dependencias en frontend:
+------
+
+#### Otras dependencias necesarias en frontend:
+
+Fullpage.js
 
 ```
-$ cd frontend
-$ rm -r node_modules
+$ npm install @fullpage/angular-fullpage
 ```

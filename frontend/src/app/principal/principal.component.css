@@ -214,3 +214,60 @@ video::-webkit-media-controls {
     background-color: rgb(71, 97, 19);
     /*background-color: rgb(0, 0, 0);*/
 }
+
+/* LOGIN */
+.loginForm {
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.login-container{
+    margin-top: 0%;
+    margin-bottom: 5%;
+}
+.login-form-1{
+    /* padding: 5%; */
+    /* box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19); */
+}
+
+.login-container form{
+    padding: 0 10% 10% 10%;
+}
+.btnSubmit
+{
+    width: 100%;
+    border-radius: 1rem;
+    padding: 0 1.5% 1.5% 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.login-form-1 .btnSubmit{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #fff;
+    background-color: orange;
+}
+
+.login-form-1 input {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: normal;
+    font-size: 0.7em;
+    height: 25px;
+  
+    -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+       -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+            box-sizing: border-box;
+  }
+
+.admin {
+    padding-left: 10%;
+    margin-bottom: 15px;
+}
+
+.admin h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    color: white;
+    font-size: 0.8em;
+}

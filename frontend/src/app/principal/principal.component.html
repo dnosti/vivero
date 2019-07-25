@@ -42,10 +42,33 @@
         <div *ngIf="!slideSection">
             <a style="cursor: pointer" onclick="closeNav()">&times;</a>
         </div>
-        <a href="#"></a>
-        <a href="#"></a>
-        <a href="#"></a>
-        <a href="#"></a>
+        <!-- LOGIN FORM -->
+        <div class="loginForm">
+            <div class="container login-container">
+                <div class="row">
+                    <div class="col-md-12 login-form-1">
+                        <div class="admin"><h3>Administración</h3></div>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="usuario" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="contraseña" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btnSubmit" value="Login" />
+                            </div>
+                            <!--
+                            <div class="form-group">
+                                <input type="submit" class="btnSubmit" value="Logout" />
+                            </div>
+                            -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- LOGIN FORM -->
     </div>
     <!-- SIDEBAR -->
 </div>

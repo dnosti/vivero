@@ -37,10 +37,10 @@
     <!-- SIDEBAR -->
     <div id="mySidebar" class="sidebar">
         <div *ngIf="slideSection">
-            <a style="cursor: pointer" onclick="closeNav(); fullpage_api.moveTo('secondPage', 0)">&times;</a>
+            <a class="cerrarAdmin" style="cursor: pointer" onclick="closeNav(); fullpage_api.moveTo('secondPage', 0)">&times;</a>
         </div>
         <div *ngIf="!slideSection">
-            <a style="cursor: pointer" onclick="closeNav()">&times;</a>
+            <a class="cerrarAdmin" style="cursor: pointer" onclick="closeNav()">&times;</a>
         </div>
         <!-- LOGIN FORM -->
         <div class="loginForm">

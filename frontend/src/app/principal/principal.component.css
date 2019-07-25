@@ -271,3 +271,7 @@ video::-webkit-media-controls {
     color: white;
     font-size: 0.8em;
 }
+
+.cerrarAdmin {
+    margin-left: 3px;
+}

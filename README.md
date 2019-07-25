@@ -1,4 +1,6 @@
-![Vivero Logo](https://github.com/dardonosti/vivero/blob/master/logo_vivero.png)
+<p align="center">
+  <img src="https://github.com/dardonosti/vivero/blob/master/logo_vivero.png">
+</p>
 
 # Vivero
 

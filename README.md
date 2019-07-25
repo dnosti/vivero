@@ -24,7 +24,7 @@ $ rm -r node_modules    /* para quitar */
 
 #### Otras dependencias necesarias en frontend:
 
-Fullpage.js
+fullPage.js: https://github.com/alvarotrigo/angular-fullpage
 
 ```
 $ npm install @fullpage/angular-fullpage

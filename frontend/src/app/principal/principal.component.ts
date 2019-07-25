@@ -9,7 +9,7 @@ export class PrincipalComponent implements OnInit {
   config: any;
   fullpage_api: any;
 
-  verdadero: boolean = false;
+  slideSection: boolean = false;
 
   constructor() {
 
@@ -35,9 +35,12 @@ export class PrincipalComponent implements OnInit {
     this.fullpage_api = fullPageRef;
   }
 
-  estadoActual(valor: boolean) {
-    this.verdadero = valor;
-    console.log(this.verdadero);
+  slideSectionTrue() {
+    this.slideSection = true;
+  }
+
+  slideSectionFalse() {
+    this.slideSection = false;
   }
 
   ngOnInit() {

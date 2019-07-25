@@ -1,10 +1,16 @@
 <div id="main">
     <ul id="menu">
         <!-- <li data-menuanchor="fourthPage"><a href="#fourthPage">Acceder</a></li> -->
-        <li data-menuanchor="fourthPage"><a style="cursor: pointer" onclick="openNav(), fullpage_api.moveTo('secondPage', 0)">Acceder</a></li>
-        <li data-menuanchor="thirdPage"><a href="#thirdPage" (click)="estadoActual(false)">Acerca de</a></li>
-        <li data-menuanchor="secondPage"><a href="#secondPage" (click)="estadoActual(true)">Estado Actual</a></li>
-        <li data-menuanchor="firstPage"><a href="#firstPage" (click)="estadoActual(false)">Inicio</a></li>
+        <div *ngIf="slideSection">
+            <li data-menuanchor="fourthPage"><a style="cursor: pointer" onclick="openNav(); fullpage_api.moveTo('secondPage', 0)">Acceder</a></li>
+        </div>
+        <div *ngIf="!slideSection">
+            <li data-menuanchor="fourthPage"><a style="cursor: pointer" onclick="openNav()">Acceder</a></li>
+        </div>
+        <!-- <li data-menuanchor="fourthPage"><a style="cursor: pointer" onclick="openNav()">Acceder</a></li> -->
+        <li data-menuanchor="thirdPage"><a href="#thirdPage" (click)="slideSectionFalse()">Acerca de</a></li>
+        <li data-menuanchor="secondPage"><a href="#secondPage" (click)="slideSectionTrue()">Estado Actual</a></li>
+        <li data-menuanchor="firstPage"><a href="#firstPage" (click)="slideSectionFalse()">Inicio</a></li>
     </ul>
 
     <div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
@@ -25,12 +31,17 @@
             <div class="slide">Estado 3</div>
             <div class="slide">Estado 4</div>
         </div>
-        <div class="section" id="section2" (click)="fullpage_api.moveTo('secondPage', 2)">Acerca de</div>
+        <div class="section" id="section2">Acerca de</div>
     </div>
-
+    <!-- fullpage_api.moveTo('secondPage', 0) -->
     <!-- SIDEBAR -->
     <div id="mySidebar" class="sidebar">
-        <a style="cursor: pointer" onclick="closeNav(), fullpage_api.moveTo('secondPage', 0)">&times;</a>
+        <div *ngIf="slideSection">
+            <a style="cursor: pointer" onclick="closeNav(); fullpage_api.moveTo('secondPage', 0)">&times;</a>
+        </div>
+        <div *ngIf="!slideSection">
+            <a style="cursor: pointer" onclick="closeNav()">&times;</a>
+        </div>
         <a href="#"></a>
         <a href="#"></a>
         <a href="#"></a>

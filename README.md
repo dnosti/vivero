@@ -31,10 +31,4 @@ Bootstrap: https://getbootstrap.com/
 $ npm install @fullpage/angular-fullpage
 $ npm install bootstrap jquery popper
 ```
-Agregar en angular.json:
 
-```
-"styles": [
-  "./node_modules/bootstrap/dist/css/bootstrap.min.css"
-],
-```

@@ -4,19 +4,33 @@ import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PrincipalComponent } from './principal/principal.component';
+import { AdminComponent } from './admin/admin.component';
+
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
+
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {CoreModule} from "./core/core.module";
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PrincipalComponent
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFullpageModule 
+    AngularFullpageModule,
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    CoreModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

@@ -1,21 +1,54 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div id="main">
+    <ul id="menu">
+        
+        <!-- <li data-menuanchor="fourthPage"><a href="#fourthPage">Acceder</a></li> -->    
+        <div *ngIf="slideSection">
+            <li data-menuanchor="fourthPage"><a style="cursor: pointer" routerLink="/admin" onclick="openNav(); fullpage_api.moveTo('secondPage', 0)">Acceder</a></li>
+        </div>
+        <div *ngIf="!slideSection">
+            <li data-menuanchor="fourthPage"><a style="cursor: pointer" routerLink="/admin" onclick="openNav()">Acceder</a></li>
+        </div>
+    
+        <!-- <li data-menuanchor="fourthPage"><a style="cursor: pointer" onclick="openNav()">Acceder</a></li> -->
+        <li data-menuanchor="thirdPage"><a href="#thirdPage" (click)="slideSectionFalse()">Acerca de</a></li>
+        <li data-menuanchor="secondPage"><a href="#secondPage" (click)="slideSectionTrue()">Estado Actual</a></li>
+        <li data-menuanchor="firstPage"><a href="#firstPage" (click)="slideSectionFalse()">Inicio</a></li>
+        
+        
+    </ul>
 
-<router-outlet></router-outlet>
+    <div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
+        <div class="section" id="section0">
+            <video id="myVideo" loop muted data-autoplay>
+                <source src="../assets/videos/video2.mp4" type="video/mp4">
+                <!-- <source src="/assets/videos/video3.webm" type="video/webm"> -->                
+            </video>
+            <div class="layer">
+                <img class="logo" data-src="/assets/images/logo_horizontal.png">
+                <h1>Vivero | TP Taller IV | 2019</h1>
+            </div>
+        </div>
+        <!-- <div class="section" (click)="fullpage_api.moveSectionDown()">Some section2</div> -->
+        <div class="section" id="section1">
+            <div class="slide">Estado 1</div>
+            <div class="slide">Estado 2</div>
+            <div class="slide">Estado 3</div>
+            <div class="slide">Estado 4</div>
+        </div>
+        <div class="section" id="section2">Acerca de</div>
+    </div>
+    <!-- fullpage_api.moveTo('secondPage', 0) -->
+    <!-- SIDEBAR -->
+    <div id="mySidebar" class="sidebar">
+        <div *ngIf="slideSection">
+            <a class="cerrarAdmin" style="cursor: pointer" routerLink="/" onclick="closeNav(); fullpage_api.moveTo('secondPage', 0)">&times;</a>
+        </div>
+        <div *ngIf="!slideSection">
+            <a class="cerrarAdmin" style="cursor: pointer" routerLink="/" onclick="closeNav()">&times;</a>
+        </div>
+
+        <router-outlet></router-outlet>        
+    </div>
+   <!-- SIDEBAR -->
+
+</div>

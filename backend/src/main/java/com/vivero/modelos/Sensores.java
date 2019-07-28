@@ -10,14 +10,18 @@ public class Sensores {
 	//valores medidos por los sensores
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer id;
+	private Integer id;
 	
-	float temperatura;
-	int humedad;
-	int luz;
-	int co2;
+	private float temperatura;
+	private int humedad;
+	private int luz;
+	private int co2;
 	
 	public Sensores( ) {};
+	
+//	public Sensores() {
+//		
+//	};
 	
 	public float getTemperatura() {
 		return temperatura;

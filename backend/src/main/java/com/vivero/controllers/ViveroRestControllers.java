@@ -19,7 +19,7 @@ public class ViveroRestControllers {
 	public ViveroRestControllers() {}
 	
 	@CrossOrigin
-	@GetMapping("/usuarios")
+	@GetMapping("/vivero")
 	public List<Sensores> obtenerDatos() {
 		return service.obtenerDatos();
 	}

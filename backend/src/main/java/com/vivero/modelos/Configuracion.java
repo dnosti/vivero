@@ -14,27 +14,27 @@ public class Configuracion {
 	private Integer Id = 1;
 	// Ventilación y drenaje Activados/Desactivados
 	@Column(name = "vent", nullable = false)
-	Boolean vent = false;
+	private Boolean vent = false;
 	@Column(name = "inund", nullable = false)
-	Boolean inund = false;
+	private Boolean inund = false;
 	
 	// Valores de referencia
 	@Column(name = "temp_max", nullable = false)
-	float temp_max = 30;
+	private float temp_max = 30;
 	@Column(name = "temp_min", nullable = false)
-	float temp_min = 15;
+	private float temp_min = 15;
 	@Column(name = "hum_max", nullable = false)
-	int hum_max = 60;
+	private int hum_max = 60;
 	@Column(name = "hum_min", nullable = false)
-	int hum_min = 45;
+	private int hum_min = 45;
 	@Column(name = "luz_max", nullable = false)
-	int luz_max = 700;
+	private int luz_max = 700;
 	@Column(name = "luz_min", nullable = false)
-	int luz_min = 400;
+	private int luz_min = 400;
 	@Column(name = "co2_max", nullable = false)
-	int co2_max = 1000;
+	private int co2_max = 1000;
 	@Column(name = "co2_min", nullable = false)
-	int co2_min = 200;
+	private int co2_min = 200;
 	
 	public Configuracion() {};
 	

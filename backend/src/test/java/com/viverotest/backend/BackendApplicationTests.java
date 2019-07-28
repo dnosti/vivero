@@ -1,4 +1,4 @@
-package com.example.backend;
+package com.viverotest.backend;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

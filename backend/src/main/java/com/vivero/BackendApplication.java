@@ -1,11 +1,11 @@
-package com.vivero.backend;
+package com.vivero;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
-@EnableTransactionManagement
+@EnableAsync
 public class BackendApplication {
 
 	public static void main(String[] args) {

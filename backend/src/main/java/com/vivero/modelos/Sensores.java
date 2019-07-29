@@ -19,9 +19,12 @@ public class Sensores {
 	
 	public Sensores( ) {};
 	
-//	public Sensores() {
-//		
-//	};
+	public Sensores(float temp, int hum, int luz, int co2) {
+		this.temperatura = temp;
+		this.humedad = hum;
+		this.luz = luz;
+		this.co2 = co2;
+	};
 	
 	public float getTemperatura() {
 		return temperatura;

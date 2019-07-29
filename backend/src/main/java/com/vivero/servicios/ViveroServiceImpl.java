@@ -31,6 +31,17 @@ public class ViveroServiceImpl implements ViveroService{
 	
 	@Override
 	public void modificarConf(Configuracion conf) {
+		Configuracion aux = repConf.findById(1).orElse(null);
+		aux.setVent(conf.getVent());
+		aux.setInund(conf.getInund());
+		aux.setTemp_max(conf.getTemp_max());
+		aux.setTemp_min(conf.getTemp_min());
+		aux.setHum_max(conf.getHum_max());
+		aux.setHum_min(conf.getHum_min());
+		aux.setLuz_max(conf.getLuz_max());
+		aux.setLuz_min(conf.getLuz_min());
+		aux.setCo2_max(conf.getCo2_max());
+		aux.setCo2_min(conf.getCo2_min());
 		repConf.save(conf);
 	}
 	

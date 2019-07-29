@@ -33,7 +33,7 @@ public class ViveroRestControllers {
 	}
 	
 	@CrossOrigin
-	@PutMapping("/vivero")
+	@PutMapping("/conf")
 	public void modificarConf(@RequestBody Configuracion conf) {
 		service.modificarConf(conf);
 	}

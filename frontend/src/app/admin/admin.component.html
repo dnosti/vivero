@@ -19,9 +19,25 @@
                     </form>
                 </div>
                 <div *ngIf="activo">
-                        <form>
+                    <form>
                         <button class="btnSubmit" type="button" (click)="logout()">Logout</button>
                     </form>
+                    
+                <div class="admin-control">
+                    <h3>Configuración</h3>
+                    <form action="">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitches">
+                            <label class="custom-control-label" for="customSwitches" style="cursor: pointer">Ventilación</label>
+                        </div>    
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitches1">
+                            <label class="custom-control-label" for="customSwitches1" style="cursor: pointer">Inundación</label>
+                        </div>
+                    </form>
+                </div>
+    
+                    
                 </div>
             </div>
         </div>

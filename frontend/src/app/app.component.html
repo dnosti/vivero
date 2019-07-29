@@ -1,27 +1,27 @@
 <div id="main">
+
     <ul id="menu">
-        
-        <!-- <li data-menuanchor="fourthPage"><a href="#fourthPage">Acceder</a></li> -->    
+        <!-- <li data-menuanchor="fourthPage"><a href="#fourthPage">Acceder</a></li> -->
         <div *ngIf="slideSection">
-            <li data-menuanchor="fourthPage"><a style="cursor: pointer" routerLink="/admin" onclick="openNav(); fullpage_api.moveTo('secondPage', 0)">Acceder</a></li>
+            <li data-menuanchor="fourthPage"><a style="cursor: pointer" routerLink="/admin"
+                    onclick="openNav(); fullpage_api.moveTo('secondPage', 0)">Acceder</a></li>
         </div>
         <div *ngIf="!slideSection">
-            <li data-menuanchor="fourthPage"><a style="cursor: pointer" routerLink="/admin" onclick="openNav()">Acceder</a></li>
+            <li data-menuanchor="fourthPage"><a style="cursor: pointer" routerLink="/admin"
+                    onclick="openNav()">Acceder</a></li>
         </div>
-    
+
         <!-- <li data-menuanchor="fourthPage"><a style="cursor: pointer" onclick="openNav()">Acceder</a></li> -->
         <li data-menuanchor="thirdPage"><a href="#thirdPage" (click)="slideSectionFalse()">Acerca de</a></li>
-        <li data-menuanchor="secondPage"><a href="#secondPage" (click)="slideSectionTrue()">Estado Actual</a></li>
+        <li data-menuanchor="secondPage"><a href="#secondPage" (click)="slideSectionTrue(); showDataSensores()">Estado</a></li>
         <li data-menuanchor="firstPage"><a href="#firstPage" (click)="slideSectionFalse()">Inicio</a></li>
-        
-        
     </ul>
 
     <div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
         <div class="section" id="section0">
             <video id="myVideo" loop muted data-autoplay>
                 <source src="../assets/videos/video2.mp4" type="video/mp4">
-                <!-- <source src="/assets/videos/video3.webm" type="video/webm"> -->                
+                <!-- <source src="/assets/videos/video3.webm" type="video/webm"> -->
             </video>
             <div class="layer">
                 <img class="logo" data-src="/assets/images/logo_horizontal.png">
@@ -29,8 +29,70 @@
             </div>
         </div>
         <!-- <div class="section" (click)="fullpage_api.moveSectionDown()">Some section2</div> -->
+
         <div class="section" id="section1">
-            <div class="slide">Estado 1</div>
+            <div class="slide">
+                <div class="sensores-actual" *ngFor="let sensoresActual of sensores">
+                    <h1 class="titulo-sensores">Estado actual de Sensores</h1>
+                    <div class="row-md">
+                        <div class="col">
+                            <h3 class="nombre-sensor">Temperatura:</h3>
+                        </div>
+                        <div class="col">
+                            <meter min="0" low="15" optimum="20" high="30" max="100"
+                                [attr.value]="sensoresActual.temperatura">
+                            </meter>
+                        </div>
+                        <div class="col">
+                            <h3 class="valor-sensor">Actual: {{sensoresActual.temperatura}}º / Valores de Ref. min: 15º
+                                / max: 30º</h3>
+                        </div>
+                    </div>
+                    <div class="row-md">
+                        <div class="col">
+                            <h3 class="nombre-sensor">Humedad:</h3>
+                        </div>
+                        <div class="col">
+                            <meter min="0" low="45" optimum="50" high="60" max="100"
+                                [attr.value]="sensoresActual.humedad">
+                            </meter>
+                        </div>
+                        <div class="col">
+                            <h3 class="valor-sensor">Actual: {{sensoresActual.humedad}}% / Valores de Ref. min: 45%
+                                / max: 60%</h3>
+                        </div>
+                    </div>
+                    <div class="row-md">
+                        <div class="col">
+                            <h3 class="nombre-sensor">Luz:</h3>
+                        </div>
+                        <div class="col">
+                            <meter min="0" low="400" optimum="550" high="700" max="1000"
+                                [attr.value]="sensoresActual.luz">
+                            </meter>
+                        </div>
+                        <div class="col">
+                            <h3 class="valor-sensor">Actual: {{sensoresActual.luz}}nm / Valores de Ref. min: 400nm
+                                / max: 700nm</h3>
+                        </div>
+                    </div>
+                    <div class="row-md">
+                        <div class="col">
+                            <h3 class="nombre-sensor">CO2:</h3>
+                        </div>
+                        <div class="col">
+                            <meter min="0" low="200" optimum="600" high="1000" max="1000"
+                                [attr.value]="sensoresActual.co2">
+                            </meter>
+                        </div>
+                        <div class="col">
+                            <h3 class="valor-sensor">Actual: {{sensoresActual.co2}}pm / Valores de Ref. min: 200pm
+                                / max: 1000pm</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="slide">Estado 2</div>
             <div class="slide">Estado 3</div>
             <div class="slide">Estado 4</div>
@@ -41,14 +103,16 @@
     <!-- SIDEBAR -->
     <div id="mySidebar" class="sidebar">
         <div *ngIf="slideSection">
-            <a class="cerrarAdmin" style="cursor: pointer" routerLink="/" onclick="closeNav(); fullpage_api.moveTo('secondPage', 0)">&times;</a>
+            <a class="cerrarAdmin" style="cursor: pointer" routerLink="/"
+                onclick="closeNav(); fullpage_api.moveTo('secondPage', 0)">&times;</a>
         </div>
         <div *ngIf="!slideSection">
             <a class="cerrarAdmin" style="cursor: pointer" routerLink="/" onclick="closeNav()">&times;</a>
         </div>
 
-        <router-outlet></router-outlet>        
+        <router-outlet></router-outlet>
     </div>
-   <!-- SIDEBAR -->
+    <!-- SIDEBAR -->
+
 
 </div>

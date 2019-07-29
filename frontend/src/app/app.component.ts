@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {AuthenticationService} from "./admin/shared/authentication.service";
+import {HttpServiceService} from './http-service.service';
+import { Sensores } from './sensores';
 
 
 
@@ -15,8 +17,9 @@ export class AppComponent {
   fullpage_api: any;
 
   slideSection: boolean = false;
+  sensores: Array<Sensores>;
  
-  constructor() {
+  constructor(private service: HttpServiceService) {
 
     // for more details on config options please visit fullPage.js docs
     this.config = {
@@ -46,6 +49,11 @@ export class AppComponent {
 
   slideSectionFalse() {
     this.slideSection = false;
+  }
+
+  showDataSensores() {
+    this.service.getDataSensores()
+      .subscribe((data: Array<Sensores>) => this.sensores = data);
   }
 
 }

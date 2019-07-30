@@ -148,7 +148,7 @@ video::-webkit-media-controls {
     position: fixed;      
     top:0;
     left:0;
-    height: 65px;
+    height: 10px;
     z-index: 70;
     width: 100%;
     padding: 0;
@@ -166,7 +166,7 @@ video::-webkit-media-controls {
     background-color: rgb(4, 78, 60);
     /* background-color: #111; */ /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
+    padding-top: 20px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 }
   

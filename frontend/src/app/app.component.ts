@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {AuthenticationService} from "./admin/shared/authentication.service";
 import {HttpServiceService} from './http-service.service';
 import { Sensores } from './sensores';
-
-
+import { Configvalores } from './configvalores';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +10,15 @@ import { Sensores } from './sensores';
   styleUrls: ['./app.component.css'], 
   providers: [ AuthenticationService, ]
 })
-export class AppComponent {
+
+export class AppComponent implements OnInit {
   title = 'frontend';
   config: any;
   fullpage_api: any;
 
   slideSection: boolean = false;
   sensores: Array<Sensores>;
+  configvalores: Array<Configvalores>;
  
   constructor(private service: HttpServiceService) {
 
@@ -53,7 +54,15 @@ export class AppComponent {
 
   showDataSensores() {
     this.service.getDataSensores()
-      .subscribe((data: Array<Sensores>) => this.sensores = data);
+      .subscribe((data_sensores: Array<Sensores>) => this.sensores = data_sensores);
   }
 
+  showDataConfig() {
+    this.service.getDataConfig()
+      .subscribe((data_config: Array<Configvalores>) => this.configvalores = data_config);
+  }
+
+  ngOnInit() {
+    this.showDataConfig();
+  }  
 }

@@ -29,6 +29,9 @@ import {environment} from '../environments/environment';
     CoreModule,
     ReactiveFormsModule
   ],
+  exports: [
+    AdminComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

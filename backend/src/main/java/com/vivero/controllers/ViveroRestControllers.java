@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vivero.modelos.Configuracion;
+import com.vivero.modelos.Estados;
 import com.vivero.modelos.Sensores;
 import com.vivero.servicios.ViveroService;
 import com.vivero.modelos.Registro;
@@ -43,6 +44,12 @@ public class ViveroRestControllers {
 	@GetMapping("/registros")
 	public List<Registro> getInfoRecords() throws InterruptedException{
 		return service.getInfoRecords();
+	}
+	
+	@CrossOrigin
+	@GetMapping("/estados")
+	public Estados getEstados() {
+		return service.getStatus();
 	}
 	
 }

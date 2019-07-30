@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.scheduling.annotation.Async;
 
 import com.vivero.modelos.Configuracion;
+import com.vivero.modelos.Estados;
 import com.vivero.modelos.Registro;
 import com.vivero.modelos.Sensores;
 
@@ -17,6 +18,6 @@ public interface ViveroService {
 	public void sensorRefresh () throws InterruptedException;
 	
 	public List<Registro> getInfoRecords();
-	
-
+	public Estados getStatus();
+	public void setStatus(Configuracion conf, Sensores sensor);
 }

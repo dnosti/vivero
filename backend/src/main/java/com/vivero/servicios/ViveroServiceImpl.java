@@ -14,9 +14,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.scheduling.annotation.Async;
 
 import com.vivero.modelos.Configuracion;
+import com.vivero.modelos.Estados;
 import com.vivero.modelos.Registro;
 import com.vivero.modelos.Sensores;
 import com.vivero.repositories.ConfigRepository;
+import com.vivero.repositories.EstadosRepository;
 import com.vivero.repositories.RegistroRepository;
 import com.vivero.repositories.ViveroRepository;
 
@@ -29,6 +31,8 @@ public class ViveroServiceImpl implements ViveroService{
 	private ConfigRepository repConf;
 	@Autowired
 	private RegistroRepository repoRec;
+	@Autowired
+	private EstadosRepository repoStatus;
 	
 	@Override
 	public List<Sensores> obtenerDatos() {
@@ -76,12 +80,12 @@ public class ViveroServiceImpl implements ViveroService{
 					reg.setCo2(sens.getCo2());
 					reg.setLocalDate(LocalDate.now());
 					reg.setLocalTime(LocalTime.now());
-					repoRec.save(reg);	
+					repoRec.save(reg);
+					setStatus(repConf.findById(1).orElse(null), sens);
 					
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-				
 				br.close();
 				
 			} catch (FileNotFoundException e1) {
@@ -91,8 +95,6 @@ public class ViveroServiceImpl implements ViveroService{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			
 			
 			Thread.sleep(10000);
 			
@@ -120,5 +122,18 @@ public class ViveroServiceImpl implements ViveroService{
 		repo.save(aux);
 	}
 	
-	
+	@Override
+	public Estados getStatus() {
+		return repoStatus.findById(1).orElse(null);
+	}
+
+	@Override
+	public void setStatus(Configuracion conf, Sensores sensor) {
+		Estados aux = repoStatus.findById(1).orElse(null);
+		aux.setTempAnormal(conf.getTemp_min(), conf.getTemp_max(), sensor.getTemperatura());
+		aux.setHumedadAnormal(conf.getHum_min(), conf.getHum_max(), sensor.getHumedad());
+		aux.setLuzAnormal(conf.getLuz_min(), conf.getLuz_max(), sensor.getLuz());
+		aux.setCo2Anormal(conf.getCo2_min(), conf.getCo2_max(), sensor.getCo2());
+		repoStatus.save(aux);
+	}	
 }

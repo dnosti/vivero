@@ -14,7 +14,6 @@ public class AppRunner implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		service.sensorRefresh();
-		
 	}
 
 }

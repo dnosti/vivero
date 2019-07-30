@@ -1,3 +1,4 @@
+
 /* Style for our header texts
 * --------------------------------------- */
 
@@ -217,4 +218,63 @@ video::-webkit-media-controls {
 
 .cerrarAdmin {
     margin-left: 3px;
+}
+
+/* METER */
+
+meter {
+    width: 400px;
+    height: 40px;
+    /* -webkit-appearance: none; /* Reset appearance */
+}
+ 
+meter::-webkit-meter-bar {
+    background: #FFF;
+    border: 3px solid #ccc; 
+    border-radius: 5px;
+}
+
+meter::-webkit-meter-optimum-value {
+    background: linear-gradient(to bottom, #62c462, #51a351);
+}
+
+meter::-webkit-meter-suboptimum-value {
+    background: linear-gradient(to bottom, #fbb450, #f89406);
+}
+
+meter::-webkit-meter-even-less-good-value {
+    background: linear-gradient(to bottom, #ee5f5b, #bd362f);
+}
+
+.sensores-actual {
+    margin-left: 200px;
+    margin-right: 200px;
+    padding: 25px; 
+} 
+
+.titulo-sensores {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    color: #111;
+    font-size: 1.5em;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border-bottom-style: dotted;
+    border-bottom-width: 2px;
+    border-bottom-color: #444;
+
+}
+
+.nombre-sensor {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.valor-sensor {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 0.7em;
 }

@@ -49,3 +49,42 @@
     color: white;
     font-size: 0.8em;
 }
+
+/* Switches */
+
+.admin-control {
+    padding: 0 5% 10% 5%;
+    margin: 0 22px 0 22px;
+    border-width: thin;
+    border-style: solid;
+    border-color: white;
+    
+}
+
+.admin-control h3 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    color: white;
+    font-size: 0.8em;    
+    text-align: center;
+    border-width: thin;
+    border-bottom-style: dotted;
+    border-color: white;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: orange;
+    background-color: orange;
+}
+
+.custom-control-label {
+    padding-top: 0.2em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    color: white;
+    font-size: 0.8em;
+}
+

@@ -12,7 +12,7 @@ public class Sensores {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	private float temperatura;
+	private Float temperatura;
 	private int humedad;
 	private int luz;
 	private int co2;

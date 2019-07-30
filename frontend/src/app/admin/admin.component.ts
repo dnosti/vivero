@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {Validators, FormGroup, FormBuilder} from "@angular/forms";
 import {LoginObject} from "./shared/login-object.model";
 import {AuthenticationService} from "./shared/authentication.service";
@@ -6,6 +6,7 @@ import {StorageService} from "../core/services/storage.service";
 import {Router} from "@angular/router";
 import {Session} from "../core/models/session.model";
 import {AuthorizatedGuard} from "../core/guards/authorizated.guard";
+
 
 
 @Component({
@@ -16,6 +17,8 @@ import {AuthorizatedGuard} from "../core/guards/authorizated.guard";
 export class AdminComponent implements OnInit {
 
   activo: boolean = this.isActive();
+
+
 
   public loginForm: FormGroup;
   public submitted: Boolean = false;

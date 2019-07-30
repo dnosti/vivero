@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.vivero.modelos.Configuracion;
 import com.vivero.modelos.Sensores;
-import com.vivero.servicios.ViveroService;;
+import com.vivero.servicios.ViveroService;
+import com.vivero.modelos.Registro;
 
 @RestController
 public class ViveroRestControllers {
@@ -37,4 +38,11 @@ public class ViveroRestControllers {
 	public void modificarConf(@RequestBody Configuracion conf) {
 		service.modificarConf(conf);
 	}
+	
+	@CrossOrigin
+	@GetMapping("/registros")
+	public List<Registro> getInfoRecords() throws InterruptedException{
+		return service.getInfoRecords();
+	}
+	
 }

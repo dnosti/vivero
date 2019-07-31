@@ -238,3 +238,22 @@ meter::-webkit-meter-even-less-good-value {
     font-weight: bold;
     font-size: 0.7em;
 }
+
+/* Registros */
+
+.registros {
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 75px;
+} 
+
+.titulo-registros {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    color: #111;
+    font-size: 1.5em;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}

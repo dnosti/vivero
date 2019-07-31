@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
-import {AuthenticationService} from "./admin/shared/authentication.service";
-import {HttpServiceService} from './http-service.service';
+import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from "./admin/shared/authentication.service";
+import { HttpServiceService } from './http-service.service';
 import { Sensores } from './sensores';
 import { Configvalores } from './configvalores';
+import { Registros } from './registros';
 
 @Component({
   selector: 'app-root',
@@ -15,19 +16,18 @@ export class AppComponent implements OnInit {
   title = 'frontend';
   config: any;
   fullpage_api: any;
-
   slideSection: boolean = false;
   sensores: Array<Sensores>;
   configvalores: Array<Configvalores>;
+  registros: Array<Registros>;
  
   constructor(private service: HttpServiceService) {
-
     // for more details on config options please visit fullPage.js docs
     this.config = {
 
       // fullpage options
       licenseKey: null,
-      anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
+      anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
       menu: '#menu',
 
       // fullpage callbacks
@@ -62,7 +62,13 @@ export class AppComponent implements OnInit {
       .subscribe((data_config: Array<Configvalores>) => this.configvalores = data_config);
   }
 
+  showDataRegistros() {
+    this.service.getDataRegistros()
+      .subscribe((data_registros: Array<Registros>) => this.registros = data_registros)
+  }
+
   ngOnInit() {
     this.showDataConfig();
+    this.showDataRegistros();
   }  
 }

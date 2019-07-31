@@ -1,12 +1,11 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
-import {Validators, FormGroup, FormBuilder} from "@angular/forms";
-import {LoginObject} from "./shared/login-object.model";
-import {AuthenticationService} from "./shared/authentication.service";
-import {StorageService} from "../core/services/storage.service";
-import {Router} from "@angular/router";
-import {Session} from "../core/models/session.model";
-import {AuthorizatedGuard} from "../core/guards/authorizated.guard";
-import { FormGroup, FormControl } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { Validators, FormGroup, FormBuilder, FormControl } from "@angular/forms";
+import { LoginObject } from "./shared/login-object.model";
+import { AuthenticationService } from "./shared/authentication.service";
+import { StorageService } from "../core/services/storage.service";
+import { Router } from "@angular/router";
+import { Session } from "../core/models/session.model";
+import { AuthorizatedGuard } from "../core/guards/authorizated.guard";
 import { HttpServiceService } from '../http-service.service';
 import { Configvalores } from '../configvalores';
 
@@ -19,9 +18,7 @@ import { Configvalores } from '../configvalores';
 export class AdminComponent implements OnInit {
 
   activo: boolean = this.isActive();
-
   configuracion: Array<Configvalores>;
-
   configForm = new FormGroup({
     vent: new FormControl(),
     inund: new FormControl(),
@@ -34,10 +31,10 @@ export class AdminComponent implements OnInit {
     co2_max: new FormControl(),
     co2_min: new FormControl(),
   })
-
   public loginForm: FormGroup;
   public submitted: Boolean = false;
   public error: {code: number, message: string} = null;
+  
   constructor(private formBuilder: FormBuilder,
               private authenticationService: AuthenticationService,
               private storageService: StorageService,

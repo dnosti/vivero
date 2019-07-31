@@ -11,14 +11,15 @@
 .login-container form{
     padding: 0 10% 10% 10%;
 }
-.btnSubmit
-{
+
+.btnSubmit {
     width: 100%;
     border-radius: 1rem;
     padding: 0 1.5% 0 1.5%;
     border: none;
     cursor: pointer;
 }
+
 .login-form-1 .btnSubmit{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
@@ -49,9 +50,6 @@
     color: white;
     font-size: 0.8em;
 }
-
-
-/* Switches */
 
 .admin-control {
     padding: 2% 5% 0 5%;
@@ -130,8 +128,7 @@
     font-size: 0.8em;
 }
 
-.btnSubmit-act
-{
+.btnSubmit-act {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
     font-size: 0.9em;
@@ -166,4 +163,3 @@ input[type=number] {
 .alertas {
     margin-left: 25px;
 }
-

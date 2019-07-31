@@ -11,7 +11,6 @@ import { HttpClientModule} from '@angular/common/http';
 
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CoreModule} from "./core/core.module";
-import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [

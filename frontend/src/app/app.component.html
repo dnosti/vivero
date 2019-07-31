@@ -1,7 +1,5 @@
 <div id="main">
-
     <ul id="menu">
-        <!-- <li data-menuanchor="fourthPage"><a href="#fourthPage">Acceder</a></li> -->
         <div *ngIf="slideSection">
             <li data-menuanchor="fourthPage"><a style="cursor: pointer" routerLink="/admin"
                     onclick="openNav(); fullpage_api.moveTo('secondPage', 0)">Acceder</a></li>
@@ -10,10 +8,9 @@
             <li data-menuanchor="fourthPage"><a style="cursor: pointer" routerLink="/admin"
                     onclick="openNav()">Acceder</a></li>
         </div>
-
-        <!-- <li data-menuanchor="fourthPage"><a style="cursor: pointer" onclick="openNav()">Acceder</a></li> -->
         <li data-menuanchor="thirdPage"><a href="#thirdPage" (click)="slideSectionFalse()">Acerca de</a></li>
-        <li data-menuanchor="secondPage"><a href="#secondPage" (click)="slideSectionTrue(); showDataSensores()">Estado</a></li>
+        <li data-menuanchor="secondPage"><a href="#secondPage"
+                (click)="slideSectionTrue(); showDataSensores()">Estado</a></li>
         <li data-menuanchor="firstPage"><a href="#firstPage" (click)="slideSectionFalse()">Inicio</a></li>
     </ul>
 
@@ -21,14 +18,12 @@
         <div class="section" id="section0">
             <video id="myVideo" loop muted data-autoplay>
                 <source src="../assets/videos/video2.mp4" type="video/mp4">
-                <!-- <source src="/assets/videos/video3.webm" type="video/webm"> -->
             </video>
             <div class="layer">
                 <img class="logo" data-src="/assets/images/logo_horizontal.png">
                 <h1>Vivero | TP Taller IV | 2019</h1>
             </div>
         </div>
-        <!-- <div class="section" (click)="fullpage_api.moveSectionDown()">Some section2</div> -->
 
         <div class="section" id="section1">
             <div class="slide">
@@ -39,12 +34,14 @@
                             <h3 class="nombre-sensor">Temperatura:</h3>
                         </div>
                         <div class="col">
-                            <meter min="0" [attr.low]="configvalores?.temp_min" optimum="20" [attr.high]="configvalores?.temp_max" max="100"
+                            <meter min="0" [attr.low]="configvalores?.temp_min" optimum="20"
+                                [attr.high]="configvalores?.temp_max" max="100"
                                 [attr.value]="sensoresActual.temperatura">
                             </meter>
                         </div>
                         <div class="col">
-                            <h3 class="valor-sensor">Actual: {{sensoresActual.temperatura}}º / Valores de Ref. min: {{configvalores?.temp_min}}º
+                            <h3 class="valor-sensor">Actual: {{sensoresActual.temperatura}}º / Valores de Ref. min:
+                                {{configvalores?.temp_min}}º
                                 / max: {{configvalores?.temp_max}}º</h3>
                         </div>
                     </div>
@@ -53,12 +50,13 @@
                             <h3 class="nombre-sensor">Humedad:</h3>
                         </div>
                         <div class="col">
-                            <meter min="0" [attr.low]="configvalores?.hum_min" optimum="50" [attr.high]="configvalores?.hum_max" max="100"
-                                [attr.value]="sensoresActual.humedad">
+                            <meter min="0" [attr.low]="configvalores?.hum_min" optimum="50"
+                                [attr.high]="configvalores?.hum_max" max="100" [attr.value]="sensoresActual.humedad">
                             </meter>
                         </div>
                         <div class="col">
-                            <h3 class="valor-sensor">Actual: {{sensoresActual.humedad}}% / Valores de Ref. min: {{configvalores?.hum_min}}%
+                            <h3 class="valor-sensor">Actual: {{sensoresActual.humedad}}% / Valores de Ref. min:
+                                {{configvalores?.hum_min}}%
                                 / max: {{configvalores?.hum_max}}%</h3>
                         </div>
                     </div>
@@ -67,12 +65,13 @@
                             <h3 class="nombre-sensor">Luz:</h3>
                         </div>
                         <div class="col">
-                            <meter min="0" [attr.low]="configvalores?.luz_min" optimm="550" [attr.high]="configvalores?.luz_max" max="1000"
-                                [attr.value]="sensoresActual.luz">
+                            <meter min="0" [attr.low]="configvalores?.luz_min" optimm="550"
+                                [attr.high]="configvalores?.luz_max" max="1000" [attr.value]="sensoresActual.luz">
                             </meter>
                         </div>
                         <div class="col">
-                            <h3 class="valor-sensor">Actual: {{sensoresActual.luz}}nm / Valores de Ref. min: {{configvalores?.luz_min}}nm
+                            <h3 class="valor-sensor">Actual: {{sensoresActual.luz}}nm / Valores de Ref. min:
+                                {{configvalores?.luz_min}}nm
                                 / max: {{configvalores?.luz_max}}nm</h3>
                         </div>
                     </div>
@@ -81,12 +80,13 @@
                             <h3 class="nombre-sensor">CO2:</h3>
                         </div>
                         <div class="col">
-                            <meter min="0" [attr.low]="configvalores?.co2_min" optimum="600" [attr.high]="configvalores?.co2_max" max="1500"
-                                [attr.value]="sensoresActual.co2">
+                            <meter min="0" [attr.low]="configvalores?.co2_min" optimum="600"
+                                [attr.high]="configvalores?.co2_max" max="1500" [attr.value]="sensoresActual.co2">
                             </meter>
                         </div>
                         <div class="col">
-                            <h3 class="valor-sensor">Actual: {{sensoresActual.co2}}pm / Valores de Ref. min: {{configvalores?.co2_min}}pm
+                            <h3 class="valor-sensor">Actual: {{sensoresActual.co2}}pm / Valores de Ref. min:
+                                {{configvalores?.co2_min}}pm
                                 / max: {{configvalores?.co2_max}}pm</h3>
                         </div>
                     </div>
@@ -96,10 +96,11 @@
             <div class="slide">Estado 2</div>
             <div class="slide">Estado 3</div>
             <div class="slide">Estado 4</div>
+    
         </div>
         <div class="section" id="section2">Acerca de</div>
     </div>
-    <!-- fullpage_api.moveTo('secondPage', 0) -->
+
     <!-- SIDEBAR -->
     <div id="mySidebar" class="sidebar" style="overflow: hidden">
         <div *ngIf="slideSection">
@@ -113,6 +114,4 @@
         <router-outlet></router-outlet>
     </div>
     <!-- SIDEBAR -->
-
-
 </div>

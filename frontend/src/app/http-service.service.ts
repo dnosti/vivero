@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -9,6 +8,7 @@ export class HttpServiceService {
 
   sensoresUrl = 'http://localhost:8080/vivero'
   configUrl = 'http://localhost:8080/conf'
+  registrosUrl = 'http://localhost:8080/registros'
 
   getDataSensores() {
     return this.http.get(this.sensoresUrl);
@@ -16,6 +16,10 @@ export class HttpServiceService {
 
   getDataConfig() {
     return this.http.get(this.configUrl);
+  }
+
+  getDataRegistros() {
+    return this.http.get(this.registrosUrl);
   }
 
   updataDataConfig(vent: boolean, inund: boolean, temp_max: number,

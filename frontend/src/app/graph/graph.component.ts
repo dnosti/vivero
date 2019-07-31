@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Registros } from 'src/registros';
 import { HttpServiceService } from 'src/http-service.service';
-<<<<<<< HEAD
-
-=======
->>>>>>> 6ecfce24a729ec9fad23717ebd5a0f25057e5005
 
 @Component({
   selector: 'app-graph',
@@ -31,6 +27,7 @@ export class GraphComponent implements OnInit {
     }
   };
 
+  public barChartLabels = [this.registros[0].id, '2007', '2008', '2009', '2010', '2011', '2012'];
   public barChartType: String = 'bar';
   public barChartLegend = true;
 

@@ -1,1 +1,154 @@
+<<<<<<< HEAD
 <router-outlet></router-outlet>
+=======
+<div id="main">
+    <ul id="menu">
+        <div *ngIf="slideSection">
+            <li data-menuanchor="fourthPage"><a style="cursor: pointer" routerLink="/admin"
+                    onclick="openNav(); fullpage_api.moveTo('secondPage', 0)">Acceder</a></li>
+        </div>
+        <div *ngIf="!slideSection">
+            <li data-menuanchor="fourthPage"><a style="cursor: pointer" routerLink="/admin"
+                    onclick="openNav()">Acceder</a></li>
+        </div>
+        <li data-menuanchor="thirdPage"><a href="#thirdPage" (click)="slideSectionFalse()">Acerca de</a></li>
+        <li data-menuanchor="secondPage"><a href="#secondPage"
+                (click)="slideSectionTrue(); showDataSensores()">Estado</a></li>
+        <li data-menuanchor="firstPage"><a href="#firstPage" (click)="slideSectionFalse()">Inicio</a></li>
+    </ul>
+
+    <div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
+        <div class="section" id="section0">
+            <video id="myVideo" loop muted data-autoplay>
+                <source src="../assets/videos/video2.mp4" type="video/mp4">
+            </video>
+            <div class="layer">
+                <img class="logo" data-src="/assets/images/logo_horizontal.png">
+                <h1>Vivero | TP Taller IV | 2019</h1>
+            </div>
+        </div>
+
+        <div class="section" id="section1">
+            <div class="slide">
+                <div class="sensores-actual" *ngFor="let sensoresActual of sensores">
+                    <h1 class="titulo-sensores">Estado actual de Sensores</h1>
+                    <div class="row-md">
+                        <div class="col">
+                            <h3 class="nombre-sensor">Temperatura:</h3>
+                        </div>
+                        <div class="col">
+                            <meter min="0" [attr.low]="configvalores?.temp_min" optimum="20"
+                                [attr.high]="configvalores?.temp_max" max="100"
+                                [attr.value]="sensoresActual.temperatura">
+                            </meter>
+                        </div>
+                        <div class="col">
+                            <h3 class="valor-sensor">Actual: {{sensoresActual.temperatura}}º / Valores de Ref. min:
+                                {{configvalores?.temp_min}}º
+                                / max: {{configvalores?.temp_max}}º</h3>
+                        </div>
+                    </div>
+                    <div class="row-md">
+                        <div class="col">
+                            <h3 class="nombre-sensor">Humedad:</h3>
+                        </div>
+                        <div class="col">
+                            <meter min="0" [attr.low]="configvalores?.hum_min" optimum="50"
+                                [attr.high]="configvalores?.hum_max" max="100" [attr.value]="sensoresActual.humedad">
+                            </meter>
+                        </div>
+                        <div class="col">
+                            <h3 class="valor-sensor">Actual: {{sensoresActual.humedad}}% / Valores de Ref. min:
+                                {{configvalores?.hum_min}}%
+                                / max: {{configvalores?.hum_max}}%</h3>
+                        </div>
+                    </div>
+                    <div class="row-md">
+                        <div class="col">
+                            <h3 class="nombre-sensor">Luz:</h3>
+                        </div>
+                        <div class="col">
+                            <meter min="0" [attr.low]="configvalores?.luz_min" optimm="550"
+                                [attr.high]="configvalores?.luz_max" max="1000" [attr.value]="sensoresActual.luz">
+                            </meter>
+                        </div>
+                        <div class="col">
+                            <h3 class="valor-sensor">Actual: {{sensoresActual.luz}}nm / Valores de Ref. min:
+                                {{configvalores?.luz_min}}nm
+                                / max: {{configvalores?.luz_max}}nm</h3>
+                        </div>
+                    </div>
+                    <div class="row-md">
+                        <div class="col">
+                            <h3 class="nombre-sensor">CO2:</h3>
+                        </div>
+                        <div class="col">
+                            <meter min="0" [attr.low]="configvalores?.co2_min" optimum="600"
+                                [attr.high]="configvalores?.co2_max" max="1500" [attr.value]="sensoresActual.co2">
+                            </meter>
+                        </div>
+                        <div class="col">
+                            <h3 class="valor-sensor">Actual: {{sensoresActual.co2}}pm / Valores de Ref. min:
+                                {{configvalores?.co2_min}}pm
+                                / max: {{configvalores?.co2_max}}pm</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="registros">
+                    <h1 class="titulo-registros">Registros</h1>
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">Día</th>
+                                <th scope="col">Hora</th>
+                                <th scope="col">Temperatura</th>
+                                <th scope="col">Humedad</th>
+                                <th scope="col">Luz</th>
+                                <th scope="col">CO2</th>
+                                <th scope="col">Ventilación</th>
+                                <th scope="col">Inundación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let registro of registros | slice:1:15; let i = index">
+                                <th scope="row">{{registro.localDate}}</th>
+                                <td>{{registro.localTime}}</td>
+                                <td>{{registro.temperatura}}</td>
+                                <td>{{registro.humedad}}</td>
+                                <td>{{registro.luz}}</td>
+                                <td>{{registro.co2}}</td>
+                                <td>{{registro.ventilacion}}</td>
+                                <td>{{registro.inundacion}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="slide">Estado 3
+                    <app-graph></app-graph>
+            </div>
+                
+            <div class="slide">Estado 4</div>
+
+        </div>
+        <div class="section" id="section2">Acerca de</div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div id="mySidebar" class="sidebar" style="overflow: hidden">
+        <div *ngIf="slideSection">
+            <a class="cerrarAdmin" style="cursor: pointer" routerLink="/"
+                onclick="closeNav(); fullpage_api.moveTo('secondPage', 0)">&times;</a>
+        </div>
+        <div *ngIf="!slideSection">
+            <a class="cerrarAdmin" style="cursor: pointer" routerLink="/" onclick="closeNav()">&times;</a>
+        </div>
+
+        <router-outlet></router-outlet>
+    </div>
+    <!-- SIDEBAR -->
+</div>
+>>>>>>> 3825264a6e166cb194e3cf35720cf94358e1f456

@@ -42,8 +42,8 @@ public class ViveroRestControllers {
 	
 	@CrossOrigin
 	@GetMapping("/registros")
-	public List<Registro> getInfoRecords() throws InterruptedException{
-		return service.getInfoRecords();
+	public List<Registro> getUltRecords() throws InterruptedException{
+		return service.getUltRecords();
 	}
 	
 	@CrossOrigin

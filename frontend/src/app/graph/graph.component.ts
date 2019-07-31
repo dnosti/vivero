@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpServiceService } from '../http-service.service';
-import { Registros } from '../registros';
+import { Registros } from 'src/registros';
+import { HttpServiceService } from 'src/http-service.service';
 
 @Component({
   selector: 'app-graph',
@@ -12,7 +12,7 @@ export class GraphComponent implements OnInit {
   private registros: Array<Registros>;
   
   constructor(private service: HttpServiceService) {
-
+    this.showDataRegistros();
   }
 
   public barChartOptions: any = {
@@ -27,7 +27,7 @@ export class GraphComponent implements OnInit {
     }
   };
 
-  public barChartLabels: any[] = [this.registros[1].localTime, '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartLabels: any[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
   public barChartType: String = 'bar';
   public barChartLegend = true;
 

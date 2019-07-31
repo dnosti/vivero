@@ -5,6 +5,7 @@ import { Sensores } from './sensores';
 import { Configvalores } from './configvalores';
 import { Registros } from './registros';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

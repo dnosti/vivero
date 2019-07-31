@@ -9,6 +9,7 @@ import com.vivero.modelos.Estados;
 import com.vivero.modelos.Registro;
 import com.vivero.modelos.Sensores;
 
+
 public interface ViveroService {
 	public List<Sensores> obtenerDatos();
 	public void setSensores(Sensores sensores); //Modifica el valor de los sensores, para simular lectura de los mismos.
@@ -18,6 +19,7 @@ public interface ViveroService {
 	public void sensorRefresh () throws InterruptedException;
 	
 	public List<Registro> getInfoRecords();
+	public List<Registro> getUltRecords();
 	public Estados getStatus();
 	public void setStatus(Configuracion conf, Sensores sensor);
 }

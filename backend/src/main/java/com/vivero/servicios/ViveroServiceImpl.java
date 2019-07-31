@@ -20,6 +20,7 @@ import com.vivero.modelos.Sensores;
 import com.vivero.repositories.ConfigRepository;
 import com.vivero.repositories.EstadosRepository;
 import com.vivero.repositories.RegistroRepository;
+import com.vivero.repositories.RegistroRepositoryImpl;
 import com.vivero.repositories.ViveroRepository;
 
 @Service
@@ -33,6 +34,8 @@ public class ViveroServiceImpl implements ViveroService{
 	private RegistroRepository repoRec;
 	@Autowired
 	private EstadosRepository repoStatus;
+	@Autowired
+	private RegistroRepositoryImpl repoRegImp;
 	
 	@Override
 	public List<Sensores> obtenerDatos() {
@@ -109,6 +112,10 @@ public class ViveroServiceImpl implements ViveroService{
 	@Override
 	public List<Registro> getInfoRecords(){
 		return repoRec.findAll();
+	}
+	
+	public List<Registro> getUltRecords(){
+		return repoRegImp.findLastTen();
 	}
 
 	@Override

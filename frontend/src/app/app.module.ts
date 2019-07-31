@@ -11,11 +11,14 @@ import { HttpClientModule} from '@angular/common/http';
 
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CoreModule} from "./core/core.module";
+import { GraphComponent } from './graph/graph.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent
+    AdminComponent,
+    GraphComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import {CoreModule} from "./core/core.module";
     HttpClientModule,
     BrowserAnimationsModule,
     CoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartsModule
   ],
   exports: [
     AdminComponent

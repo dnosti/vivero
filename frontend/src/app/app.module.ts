@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin/admin.component';
 import { MainComponent } from './main/main.component';
+import { ChartsModule } from 'ng2-charts';
+import { GraphComponent } from './graph/graph.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { MainComponent } from './main/main.component';
     LoginComponent,
     HomeComponent,
     AdminComponent,
-    MainComponent
+    MainComponent,
+    GraphComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,7 @@ import { MainComponent } from './main/main.component';
     CoreModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

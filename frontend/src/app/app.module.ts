@@ -24,6 +24,7 @@ import {environment} from '../environments/environment';
     AngularFullpageModule,
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     CoreModule,

@@ -1,0 +1,13 @@
+.form-control:focus {
+    border-color:  rgb(34, 194, 69) !important;
+    box-shadow: 0 0 5px rgb(51, 211, 86) !important;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.logo-padding {
+  padding-top: 10px;
+}

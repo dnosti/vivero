@@ -1,0 +1,29 @@
+.main-container {
+    margin-top: 25px;
+    padding-right: 35px;
+}
+
+.titulo-estado-sensores {
+    margin-top: 0px;
+    padding-top: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #114D45;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.titulo-sensor {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #114D45;
+    font-size: 0.8em;
+}
+
+.valor-estado {
+    font-weight: bolder;
+    font-size: 1.3em;
+}
+
+.meter-sensores {
+    margin-left: 10px;
+    padding-bottom: 2px;
+}

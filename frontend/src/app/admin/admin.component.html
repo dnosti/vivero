@@ -1,83 +1,58 @@
-<div class="loginForm">
-    <div class="container login-container">
+<div class="adminForm">
+    <div class="container admin-container">
         <div class="row">
-            <div class="col-md-12 login-form-1">
-                <div class="admin">
-                    <h3>Administración</h3>
-                </div>
+            <div class="col-md-12 admin-form-1">
+                <div class="admin-control border rounded">
+                    <h3 class="border-bottom">Alertas</h3>
+                    <form [formGroup]="configForm" (ngSubmit)="updateConfig()">
+                        <div class="custom-control custom-switch alertas">
+                            <input formControlName="vent" type="checkbox" class="custom-control-input"
+                                id="customSwitches">
+                            <label class="custom-control-label" for="customSwitches"
+                                style="cursor: pointer">Ventilación</label>
+                        </div>
+                        <div class="custom-control custom-switch alertas">
+                            <input formControlName="inund" type="checkbox" class="custom-control-input"
+                                id="customSwitches1">
+                            <label class="custom-control-label" for="customSwitches1"
+                                style="cursor: pointer">Inundación</label>
+                        </div>
 
-                <div *ngIf="!activo">
-                    <form id="login-form" #lForm="ngForm" [formGroup]="loginForm" (ngSubmit)="submitLogin()" novalidate>
-                        <div class="form-group">
-                            <input type="text" class="form-control" formControlName="username" placeholder="usuario"
-                                value="" />
+                        <h3 class="valor-ref">Configuración de valores de referencia:</h3>
+                        <h4 class="border-bottom">Temperatura</h4>
+                        <div class="form-group form-inline">
+                            <span class="textform-l">Min:</span>
+                            <input class="input-data" formControlName="temp_min" type="number">
+                            <span class="textform-r">Max:</span>
+                            <input class="input-data" formControlName="temp_max" type="number">
                         </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" formControlName="password"
-                                placeholder="contraseña" value="" />
+
+                        <h4 class="border-bottom">Humedad</h4>
+                        <div class="form-group form-inline">
+                            <span class="textform-l">Min:</span>
+                            <input class="input-data" formControlName="hum_min" type="number">
+                            <span class="textform-r">Max:</span>
+                            <input class="input-data" formControlName="hum_max" type="number">
                         </div>
-                        <div class="form-group">
-                            <input type="submit" form="login-form" class="btnSubmit" value="Login" />
+
+                        <h4 class="border-bottom">Luz</h4>
+                        <div class="form-group form-inline">
+                            <span class="textform-l">Min:</span>
+                            <input class="input-data" formControlName="luz_min" type="number">
+                            <span class="textform-r">Max:</span>
+                            <input class="input-data" formControlName="luz_max" type="number">
                         </div>
+
+                        <h4 class="border-bottom">CO2</h4>
+                        <div class="form-group form-inline">
+                            <span class="textform-l">Min:</span>
+                            <input class="input-data" formControlName="co2_min" type="number">
+                            <span class="textform-r">Max:</span>
+                            <input class="input-data" formControlName="co2_max" type="number">
+                        </div>
+
+                        <button class="btnSubmit-act" type="submit">Actualizar</button>
                     </form>
-                </div>
-
-                <div *ngIf="activo">
-                    <form>
-                        <button class="btnSubmit" type="button" (click)="logout()">Logout</button>
-                    </form>
-                    <div class="admin-control">
-                        <h3>Alertas</h3>
-                        <form [formGroup]="configForm" (ngSubmit)="updateConfig()">
-                            <div class="custom-control custom-switch alertas">
-                                <input formControlName="vent" type="checkbox" class="custom-control-input"
-                                    id="customSwitches">
-                                <label class="custom-control-label" for="customSwitches"
-                                    style="cursor: pointer">Ventilación</label>
-                            </div>
-                            <div class="custom-control custom-switch alertas">
-                                <input formControlName="inund" type="checkbox" class="custom-control-input"
-                                    id="customSwitches1">
-                                <label class="custom-control-label" for="customSwitches1"
-                                    style="cursor: pointer">Inundación</label>
-                            </div>
-
-                            <h3>Configuración de valores de referencia</h3>
-                            <h4>Temperatura</h4>
-                            <div class="form-group form-inline">
-                                <span class="textform-l">Min:</span>
-                                <input class="input-data" formControlName="temp_min" type="number">
-                                <span class="textform-r">Max:</span>
-                                <input class="input-data" formControlName="temp_max" type="number">
-                            </div>
-
-                            <h4>Humedad</h4>
-                            <div class="form-group form-inline">
-                                <span class="textform-l">Min:</span>
-                                <input class="input-data" formControlName="hum_min" type="number">
-                                <span class="textform-r">Max:</span>
-                                <input class="input-data" formControlName="hum_max" type="number">
-                            </div>
-
-                            <h4>Luz</h4>
-                            <div class="form-group form-inline">
-                                <span class="textform-l">Min:</span>
-                                <input class="input-data" formControlName="luz_min" type="number">
-                                <span class="textform-r">Max:</span>
-                                <input class="input-data" formControlName="luz_max" type="number">
-                            </div>
-
-                            <h4>CO2</h4>
-                            <div class="form-group form-inline">
-                                <span class="textform-l">Min:</span>
-                                <input class="input-data" formControlName="co2_min" type="number">
-                                <span class="textform-r">Max:</span>
-                                <input class="input-data" formControlName="co2_max" type="number">
-                            </div>
-                        
-                            <button class="btnSubmit-act" type="submit">Actualizar</button>
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>

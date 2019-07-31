@@ -1,0 +1,25 @@
+.contenedor {
+    width: 100%;
+    height: 100%;
+}
+
+.filas {
+    padding: 0 15px;
+}
+
+.sidebar {
+    float: left;
+    width: 275px;
+    height: 100%;
+}
+
+.main {
+    height: 100%;
+    margin-left: 285px;
+}
+
+.navbar-align {
+    margin: 0px;
+    padding-left: 25px;
+    padding-right: 25px;
+}

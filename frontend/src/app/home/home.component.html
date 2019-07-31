@@ -1,0 +1,19 @@
+<div class="contenedor">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white justify-content-between border-bottom navbar-align">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/img/logo_vivero.png" height="50px" class="d-inline-block align-top"
+                alt="">
+            </a>
+            <ul class="navbar-nav mr-sm-2">
+                <li class="nav-item">
+                    <button type="button" class="btn btn-success my-2 my-sm-0" (click)="logout()">Log Out</button>
+                </li>
+            </ul>
+        </nav>
+        <div class="sidebar">
+            <app-admin></app-admin>
+        </div>
+        <div class="main">
+            <app-main></app-main>
+        </div>
+</div>

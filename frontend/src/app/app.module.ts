@@ -1,39 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CoreModule} from "./core/core.module";
+import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin/admin.component';
-
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http';
-
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {CoreModule} from "./core/core.module";
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent
+    LoginComponent,
+    HomeComponent,
+    AdminComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    AngularFullpageModule,
-    BrowserModule,
+    AppRoutingModule, 
     FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
     BrowserAnimationsModule,
     CoreModule,
-    ReactiveFormsModule
-  ],
-  exports: [
-    AdminComponent
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

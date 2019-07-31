@@ -1,34 +1,18 @@
-.loginForm {
-    margin-top: 0;
+.adminForm {
+    margin-top: 25px;
     margin-left: 0;
 }
 
-.login-container{
+.admin-container{
     margin-top: 0%;
     margin-bottom: 5%;
 }
 
-.login-container form{
+.admin-container form{
     padding: 0 10% 10% 10%;
 }
 
-.btnSubmit {
-    width: 100%;
-    border-radius: 1rem;
-    padding: 0 1.5% 0 1.5%;
-    border: none;
-    cursor: pointer;
-}
-
-.login-form-1 .btnSubmit{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bold;
-    font-size: 0.9em;
-    color: #fff;
-    background-color: orange;
-}
-
-.login-form-1 input {
+.admin-form-1 input {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: normal;
     font-size: 0.7em;
@@ -47,16 +31,18 @@
 .admin h3 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bolder;
-    color: white;
+    color: #114D45;
     font-size: 0.8em;
 }
 
 .admin-control {
     padding: 2% 5% 0 5%;
     margin: 0 22px 0 22px;
+    /*
     border-width: thin;
     border-style: solid;
-    border-color: white;
+    border-color:#114D45;
+    */
 }
 
 .admin-control h3 {
@@ -64,12 +50,14 @@
     padding-bottom: 5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bolder;
-    color: white;
+    color: #114D45;
     font-size: 0.8em;    
     text-align: center;
+    /*
     border-width: thin;
     border-bottom-style: dotted;
-    border-color: white;
+    border-color: #114D45;
+    */
 }
 
 .admin-control h4 {
@@ -77,22 +65,24 @@
     padding-bottom: 2px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bolder;
-    color: white;
+    color: #114D45;
     font-size: 0.8em;    
     text-align: center;
+    /*
     border-width: thin;
     border-bottom-style: dotted;
-    border-color: white;
+    border-color: #114D45;
+    */
     margin-top: 1px;
 }
 
 .admin-control .textform-l {
     padding-top: 5px;
     padding-bottom: 5px;
-    margin-left: 7px;
+    margin-left: 8px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bolder;
-    color: white;
+    color: #114D45;
     font-size: 0.7em;    
     text-align: left;
 }
@@ -100,18 +90,19 @@
 .admin-control .textform-r {
     padding-top: 5px;
     padding-bottom: 5px;
-    margin-left: 5px;
+    margin-left: 8px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bolder;
-    color: white;
+    color:#114D45;
     font-size: 0.7em;    
     text-align: left;
 }
 
 .admin-control .input-data {
     width: 30px;
-    margin-left: 8px;
+    margin-left: 3px;
     height: 20px;
+    color: #114D45;
 }
 
 .custom-control-input:checked~.custom-control-label::before {
@@ -123,14 +114,12 @@
 .custom-control-label {
     padding-top: 0.2em;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bolder;
-    color: white;
+    color: #114D45;
     font-size: 0.8em;
 }
 
 .btnSubmit-act {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bold;
     font-size: 0.9em;
     color: #fff;
     background-color: orange;
@@ -162,4 +151,8 @@ input[type=number] {
 
 .alertas {
     margin-left: 25px;
+}
+
+.valor-ref {
+    margin-top: 10px;
 }

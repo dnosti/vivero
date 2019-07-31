@@ -1,0 +1,44 @@
+<div class="container main-container">
+    <h2 class="titulo-estado-sensores border-bottom">Estado actual de sensores:</h2>
+    <div class="row" *ngFor="let sensor of sensores">
+        <div class="col">
+            <h4 class="titulo-sensor">Temperatura: <span class="valor-estado">{{sensor.temperatura}}º</span>
+                <meter class="meter-sensores" min="0" [attr.low]="configvalores?.temp_min" optimum="20" [attr.high]="configvalores?.temp_max"
+                max="100" [attr.value]="sensor.temperatura"></meter>
+            </h4>
+        </div>
+        <div class="col">
+            <h4 class="titulo-sensor">Humedad: <span class="valor-estado">{{sensor.humedad}}%</span>
+                <meter class="meter-sensores" min="0" [attr.low]="configvalores?.hum_min" optimum="50" [attr.high]="configvalores?.hum_max"
+                max="100" [attr.value]="sensor.humedad"></meter>
+            </h4>
+        </div>
+        <div class="col">
+            <h4 class="titulo-sensor">Luz: <span class="valor-estado">{{sensor.luz}}nm</span>
+                <meter class="meter-sensores" min="0" [attr.low]="configvalores?.luz_min" optimum="550" [attr.high]="configvalores?.luz_max"
+                max="1000" [attr.value]="sensor.luz"></meter>
+            </h4>
+        </div>
+        <div class="col">
+            <h4 class="titulo-sensor">CO2: <span class="valor-estado">{{sensor.co2}}pm</span>
+                <meter class="meter-sensores" min="0" [attr.low]="configvalores?.co2_min" optimum="600" [attr.high]="configvalores?.co2_max"
+                max="1500" [attr.value]="sensor.co2"></meter>
+            </h4>
+        </div>
+    </div>
+    
+    <!-- Navbar Gráficos -->
+    <div class="row">
+        <div class="col">
+            Acá van botones de selección de gráfico a mostrar...
+        </div>
+    </div>
+
+    <!-- Gráficos -->
+    <div class="row">
+        <div class="col">
+            Acá va el gráfico seleccionado...
+        </div>
+    </div>
+    
+</div>

@@ -69,6 +69,5 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.showDataConfig();
-    this.showDataRegistros();
   }  
 }

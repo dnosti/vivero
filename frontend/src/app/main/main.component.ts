@@ -54,6 +54,7 @@ export class MainComponent implements OnInit {
     this.humedad = false;
     this.luz = false;
     this.co2 = false;
+    this.totales = false;
   }
 
   showHum() {

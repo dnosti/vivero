@@ -33,7 +33,7 @@ export class GraphLuzComponent implements OnInit {
   public barChartLegend = true;
 
   public barChartData: any = [
-    { data: [], label: 'Temperatura' }
+    { data: [], label: 'Luz' }
   ];
   // events
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {

@@ -35,7 +35,7 @@ export class GraphHumComponent implements OnInit {
   public barChartLegend = true;
 
   public barChartData: any = [
-    { data: [], label: 'Temperatura' }
+    { data: [], label: 'Humedad' }
   ];
   // events
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {

@@ -11,8 +11,7 @@ import { ChartOptions } from 'chart.js';
 })
 export class GraphComponent {
 
-  registros: Array<Registros>   ;
-
+  registros: Array<Registros>;
   
   constructor(private service: HttpServiceService) { 
   }

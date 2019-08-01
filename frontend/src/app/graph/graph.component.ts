@@ -12,7 +12,8 @@ export class GraphComponent implements OnInit {
   private registros: Array<Registros>;
   
   constructor(private service: HttpServiceService) {
-    this.showDataRegistros();
+    this.service.getDataRegistros()
+      .subscribe((data_registros: Array<Registros>) => this.registros = data_registros);
   }
 
   public barChartOptions: any = {

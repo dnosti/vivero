@@ -53,3 +53,20 @@
 .container-graficos {
     margin-top: 10px;
 }
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 398px;
+    overflow: auto;
+}
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+.btn-act-tabla {
+    margin-top: 10px;
+    color: white;
+    background-color: orange;
+    float: right;
+    margin-right: 2px;
+}

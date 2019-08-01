@@ -36,7 +36,7 @@
                     <button type="button" (click)="showHum()" class="btn btn-success">Humedad</button>
                     <button type="button" (click)="showLuz()" class="btn btn-success">Luz</button>
                     <button type="button" (click)="showCo2()" class="btn btn-success">CO2</button>
-                    <button type="button" (click)="showTotales()" class="btn btn-success">Todos</button>
+                    <button type="button" (click)="showTabla()" class="btn btn-success">Tabla</button>
                 </div>
             </div>
             <div class="col-md-10">
@@ -53,7 +53,7 @@
                 <div *ngIf="co2">
                     <h4 class="titulo-graficos border-bottom">Registros de CO2:</h4>
                 </div>
-                <div *ngIf="totales">
+                <div *ngIf="tabla">
                     <h4 class="titulo-graficos border-bottom">Tabla de Registros:</h4>
                     <div class="table-wrapper-scroll-y my-custom-scrollbar">
                         <table class="table table-bordered table-striped mb-0">

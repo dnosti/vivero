@@ -20,7 +20,7 @@ export class MainComponent implements OnInit {
   humedad: boolean = false;
   luz: boolean = false;
   co2: boolean = false;
-  totales: boolean = false;
+  tabla: boolean = false;
   
   constructor(private service: HttpServiceService) {
     this.service.getDataSensores()
@@ -54,7 +54,7 @@ export class MainComponent implements OnInit {
     this.humedad = false;
     this.luz = false;
     this.co2 = false;
-    this.totales = false;
+    this.tabla = false;
   }
 
   showHum() {
@@ -62,7 +62,7 @@ export class MainComponent implements OnInit {
     this.humedad = true;
     this.luz = false;
     this.co2 = false;
-    this.totales = false;
+    this.tabla = false;
   }
 
   showLuz() {
@@ -70,7 +70,7 @@ export class MainComponent implements OnInit {
     this.humedad = false;
     this.luz = true;
     this.co2 = false;
-    this.totales = false;
+    this.tabla = false;
   }
 
   showCo2() {
@@ -78,15 +78,15 @@ export class MainComponent implements OnInit {
     this.humedad = false;
     this.luz = false;
     this.co2 = true;
-    this.totales = false;
+    this.tabla = false;
   }
 
-  showTotales() {
+  showTabla() {
     this.temperatura = false;
     this.humedad = false;
     this.luz = false;
     this.co2 = false;
-    this.totales = true;
+    this.tabla = true;
   }
 
 }

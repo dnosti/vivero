@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Registros } from 'src/registros';
 import { HttpServiceService } from 'src/http-service.service';
+import { ChartOptions } from 'chart.js';
+
 
 @Component({
   selector: 'app-graph',
@@ -10,12 +12,21 @@ import { HttpServiceService } from 'src/http-service.service';
 export class GraphComponent implements OnInit {
 
   private registros: Array<Registros>;
+  regCargados: Promise <boolean>;
   
-  constructor(private service: HttpServiceService) {
-    this.showDataRegistros();
+  constructor(private service: HttpServiceService) { 
+    this.showDataRegistros(); 
   }
 
-  public barChartOptions: any = {
+  async showDataRegistros() {
+    await this.service.getDataRegistros()
+      .subscribe((data_registros: Array<Registros>) =>{ 
+        this.registros = data_registros;
+        this.regCargados = Promise.resolve(true);
+      });
+  }
+
+  public barChartOptions: ChartOptions = {
     responsive: true,
     // We use these empty structures as placeholders for dynamic theming.
     scales: { xAxes: [{}], yAxes: [{}] },
@@ -26,8 +37,8 @@ export class GraphComponent implements OnInit {
       }
     }
   };
-
-  public barChartLabels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  
+  public barChartLabels: any[] = [this.registros[0].localTime , '2007', '2008', '2009', '2010', '2011', '2012'];
   public barChartType: String = 'bar';
   public barChartLegend = true;
 
@@ -54,15 +65,16 @@ export class GraphComponent implements OnInit {
       56,
       (Math.random() * 100),
       40];
+      console.log(this.registros[0].localTime);
     this.barChartData[0].data = data;
   }
 
-  showDataRegistros() {
-    this.service.getDataRegistros()
-      .subscribe((data_registros: Array<Registros>) => this.registros = data_registros)
+  public async returnLocalTime(i: number){
+    this.showDataRegistros();
+    return this.registros[i].localTime;
   }
 
-  ngOnInit() {
-    this.showDataRegistros();
+  async ngOnInit() {
+    this.showDataRegistros()
   }  
 }

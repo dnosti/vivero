@@ -4,7 +4,6 @@ import { Sensores } from 'src/sensores';
 import { Configvalores } from 'src/configvalores';
 import { Registros } from 'src/registros';
 
-
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',

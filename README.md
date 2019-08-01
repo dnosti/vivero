@@ -25,10 +25,12 @@ $ rm -r node_modules    /* para quitar */
 #### Otras dependencias necesarias en frontend:
 
 Bootstrap: https://getbootstrap.com/  
-ng2-charts: https://valor-software.com/ng2-charts/
+ng2-charts: https://valor-software.com/ng2-charts/  
+mdbootstrap: https://mdbootstrap.com/
 
 ```
 $ npm install bootstrap jquery popper  
-$ npm install --save ng2-charts
+$ npm install --save ng2-charts  
+$ npm install mdbootstrap
 ```
 

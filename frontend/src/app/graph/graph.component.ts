@@ -34,7 +34,8 @@ export class GraphComponent {
   public barChartLegend = true;
 
   public barChartData: any = [
-    { data: [], label: 'Temperatura' }
+    { data: [], label: 'Temperatura', backgroundColor: 'rgba(255, 0, 0, 0.7)', borderColor: '#bb0000', 
+    hoverBackgroundColor: 'rgba(255, 0, 0, 0.7)', hoverBorderColor: '#bb0000' }
   ];
   // events
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
@@ -49,9 +50,9 @@ export class GraphComponent {
     this.service.getDataRegistros()
       .subscribe((data_registros: Array<Registros>) => (this.barChartLabels = [data_registros[9].localTime, 
       data_registros[8].localTime, data_registros[7].localTime, data_registros[6].localTime, 
-      data_registros[5].localTime, data_registros[5].localTime, data_registros[4].localTime, 
-      data_registros[3].localTime, data_registros[2].localTime, data_registros[1].localTime, 
-      data_registros[0].localTime], this.barChartData[0].data = [data_registros[9].temperatura, data_registros[8].temperatura, 
+      data_registros[5].localTime, data_registros[4].localTime, data_registros[3].localTime, 
+      data_registros[2].localTime, data_registros[1].localTime, data_registros[0].localTime], 
+      this.barChartData[0].data = [data_registros[9].temperatura, data_registros[8].temperatura, 
       data_registros[7].temperatura, data_registros[6].temperatura, data_registros[5].temperatura, 
       data_registros[4].temperatura, data_registros[3].temperatura, data_registros[2].temperatura, 
       data_registros[1].temperatura, data_registros[0].temperatura]));

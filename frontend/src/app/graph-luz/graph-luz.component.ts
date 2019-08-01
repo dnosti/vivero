@@ -33,7 +33,8 @@ export class GraphLuzComponent implements OnInit {
   public barChartLegend = true;
 
   public barChartData: any = [
-    { data: [], label: 'Luz' }
+    { data: [], label: 'Luz', backgroundColor: 'rgba(255, 255, 1, 0.7)', borderColor: '#ffec00', 
+    hoverBackgroundColor: '(255, 255, 1, 0.8)', hoverBorderColor: '#ffec00'  }
   ];
   // events
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
@@ -48,9 +49,9 @@ export class GraphLuzComponent implements OnInit {
     this.service.getDataRegistros()
       .subscribe((data_registros: Array<Registros>) => (this.barChartLabels = [data_registros[9].localTime, 
       data_registros[8].localTime, data_registros[7].localTime, data_registros[6].localTime, 
-      data_registros[5].localTime, data_registros[5].localTime, data_registros[4].localTime, 
-      data_registros[3].localTime, data_registros[2].localTime, data_registros[1].localTime, 
-      data_registros[0].localTime], this.barChartData[0].data = [data_registros[9].luz, data_registros[8].luz, 
+      data_registros[5].localTime, data_registros[4].localTime, data_registros[3].localTime, 
+      data_registros[2].localTime, data_registros[1].localTime, data_registros[0].localTime], 
+      this.barChartData[0].data = [data_registros[9].luz, data_registros[8].luz, 
       data_registros[7].luz, data_registros[6].luz, data_registros[5].luz, 
       data_registros[4].luz, data_registros[3].luz, data_registros[2].luz, 
       data_registros[1].luz, data_registros[0].luz]));

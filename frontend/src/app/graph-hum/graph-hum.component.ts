@@ -35,7 +35,8 @@ export class GraphHumComponent implements OnInit {
   public barChartLegend = true;
 
   public barChartData: any = [
-    { data: [], label: 'Humedad' }
+    { data: [], label: 'Humedad', backgroundColor: 'rgba(5, 1, 255,0.7)', borderColor: '#040075', 
+    hoverBackgroundColor: 'rgba(5, 1, 255,0.7)', hoverBorderColor: '#040075',}
   ];
   // events
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
@@ -50,9 +51,9 @@ export class GraphHumComponent implements OnInit {
     this.service.getDataRegistros()
       .subscribe((data_registros: Array<Registros>) => (this.barChartLabels = [data_registros[9].localTime, 
       data_registros[8].localTime, data_registros[7].localTime, data_registros[6].localTime, 
-      data_registros[5].localTime, data_registros[5].localTime, data_registros[4].localTime, 
-      data_registros[3].localTime, data_registros[2].localTime, data_registros[1].localTime, 
-      data_registros[0].localTime], this.barChartData[0].data = [data_registros[9].humedad, data_registros[8].humedad, 
+      data_registros[5].localTime, data_registros[4].localTime, data_registros[3].localTime, 
+      data_registros[2].localTime, data_registros[1].localTime, data_registros[0].localTime], 
+      this.barChartData[0].data = [data_registros[9].humedad, data_registros[8].humedad, 
       data_registros[7].humedad, data_registros[6].humedad, data_registros[5].humedad, 
       data_registros[4].humedad, data_registros[3].humedad, data_registros[2].humedad, 
       data_registros[1].humedad, data_registros[0].humedad]));

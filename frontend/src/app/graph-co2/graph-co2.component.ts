@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Registros } from 'src/registros';
 import { HttpServiceService } from 'src/http-service.service';
 import { ChartOptions } from 'chart.js';
+import { defaultColors } from 'ng2-charts';
 
 @Component({
   selector: 'app-graph-co2',
@@ -27,10 +28,13 @@ export class GraphCo2Component implements OnInit {
     public barChartLabels: any[];
     public barChartType: String = 'bar';
     public barChartLegend = true;
+
   
     public barChartData: any = [
-      { data: [], label: 'CO2' }
+      { data: [], label: 'CO2', backgroundColor: 'rgba(150, 150, 150, 0.7)', borderColor: '#515151', 
+      hoverBackgroundColor: 'rgba(150, 150, 150, 0.7)', hoverBorderColor: '#515151' }
     ];
+    
     // events
     public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
       console.log(event, active);
@@ -44,9 +48,9 @@ export class GraphCo2Component implements OnInit {
       this.service.getDataRegistros()
         .subscribe((data_registros: Array<Registros>) => (this.barChartLabels = [data_registros[9].localTime, 
         data_registros[8].localTime, data_registros[7].localTime, data_registros[6].localTime, 
-        data_registros[5].localTime, data_registros[5].localTime, data_registros[4].localTime, 
-        data_registros[3].localTime, data_registros[2].localTime, data_registros[1].localTime, 
-        data_registros[0].localTime], this.barChartData[0].data = [data_registros[9].co2, data_registros[8].co2, 
+        data_registros[5].localTime, data_registros[4].localTime, data_registros[3].localTime, 
+        data_registros[2].localTime, data_registros[1].localTime, data_registros[0].localTime], 
+        this.barChartData[0].data = [data_registros[9].co2, data_registros[8].co2, 
         data_registros[7].co2, data_registros[6].co2, data_registros[5].co2, 
         data_registros[4].co2, data_registros[3].co2, data_registros[2].co2, 
         data_registros[1].co2, data_registros[0].co2]));

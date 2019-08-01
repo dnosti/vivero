@@ -27,7 +27,7 @@ export class GraphComponent implements OnInit {
     }
   };
 
-  public barChartLabels = [this.registros[0].id, '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartLabels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
   public barChartType: String = 'bar';
   public barChartLegend = true;
 

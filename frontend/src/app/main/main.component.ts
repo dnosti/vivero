@@ -16,6 +16,11 @@ export class MainComponent implements OnInit {
   configvalores: Array<Configvalores>;
   registros: Array<Registros>;
 
+  temperatura: boolean = true;
+  humedad: boolean = false;
+  luz: boolean = false;
+  co2: boolean = false;
+  
   constructor(private service: HttpServiceService) {
     this.service.getDataSensores()
       .subscribe((data_sensores: Array<Sensores>) => this.sensores = data_sensores);
@@ -41,6 +46,34 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.showDataConfig();
     this.showDataRegistros();
+  }
+
+  showTemp() {
+    this.temperatura = true;
+    this.humedad = false;
+    this.luz = false;
+    this.co2 = false;
+  }
+
+  showHum() {
+    this.temperatura = false;
+    this.humedad = true;
+    this.luz = false;
+    this.co2 = false;
+  }
+
+  showLuz() {
+    this.temperatura = false;
+    this.humedad = false;
+    this.luz = true;
+    this.co2 = false;
+  }
+
+  showCo2() {
+    this.temperatura = false;
+    this.humedad = false;
+    this.luz = false;
+    this.co2 = true;
   }
 
 }

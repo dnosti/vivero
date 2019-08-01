@@ -14,6 +14,10 @@ import { AdminComponent } from './admin/admin.component';
 import { MainComponent } from './main/main.component';
 import { ChartsModule } from 'ng2-charts';
 import { GraphComponent } from './graph/graph.component';
+import { RouterModule } from '@angular/router';
+import { GraphHumComponent } from './graph-hum/graph-hum.component';
+import { GraphCo2Component } from './graph-co2/graph-co2.component';
+import { GraphLuzComponent } from './graph-luz/graph-luz.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,10 @@ import { GraphComponent } from './graph/graph.component';
     HomeComponent,
     AdminComponent,
     MainComponent,
-    GraphComponent
+    GraphComponent,
+    GraphHumComponent,
+    GraphCo2Component,
+    GraphLuzComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,7 @@ import { GraphComponent } from './graph/graph.component';
     CoreModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ChartsModule
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

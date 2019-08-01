@@ -3,17 +3,15 @@ import { Registros } from 'src/registros';
 import { HttpServiceService } from 'src/http-service.service';
 import { ChartOptions } from 'chart.js';
 
-
 @Component({
-  selector: 'app-graph',
-  templateUrl: './graph.component.html',
-  styleUrls: ['./graph.component.css']
+  selector: 'app-graph-luz',
+  templateUrl: './graph-luz.component.html',
+  styleUrls: ['./graph-luz.component.css']
 })
-export class GraphComponent {
+export class GraphLuzComponent implements OnInit {
 
   registros: Array<Registros>   ;
 
-  
   constructor(private service: HttpServiceService) { 
   }
 
@@ -52,10 +50,10 @@ export class GraphComponent {
       data_registros[8].localTime, data_registros[7].localTime, data_registros[6].localTime, 
       data_registros[5].localTime, data_registros[5].localTime, data_registros[4].localTime, 
       data_registros[3].localTime, data_registros[2].localTime, data_registros[1].localTime, 
-      data_registros[0].localTime], this.barChartData[0].data = [data_registros[9].temperatura, data_registros[8].temperatura, 
-      data_registros[7].temperatura, data_registros[6].temperatura, data_registros[5].temperatura, 
-      data_registros[4].temperatura, data_registros[3].temperatura, data_registros[2].temperatura, 
-      data_registros[1].temperatura, data_registros[0].temperatura]));
+      data_registros[0].localTime], this.barChartData[0].data = [data_registros[9].luz, data_registros[8].luz, 
+      data_registros[7].luz, data_registros[6].luz, data_registros[5].luz, 
+      data_registros[4].luz, data_registros[3].luz, data_registros[2].luz, 
+      data_registros[1].luz, data_registros[0].luz]));
 
   }
   ngOnInit() {

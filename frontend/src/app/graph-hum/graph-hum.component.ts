@@ -3,13 +3,13 @@ import { Registros } from 'src/registros';
 import { HttpServiceService } from 'src/http-service.service';
 import { ChartOptions } from 'chart.js';
 
-
 @Component({
-  selector: 'app-graph',
-  templateUrl: './graph.component.html',
-  styleUrls: ['./graph.component.css']
+  selector: 'app-graph-hum',
+  templateUrl: './graph-hum.component.html',
+  styleUrls: ['./graph-hum.component.css']
 })
-export class GraphComponent {
+export class GraphHumComponent implements OnInit {
+
 
   registros: Array<Registros>   ;
 
@@ -52,10 +52,10 @@ export class GraphComponent {
       data_registros[8].localTime, data_registros[7].localTime, data_registros[6].localTime, 
       data_registros[5].localTime, data_registros[5].localTime, data_registros[4].localTime, 
       data_registros[3].localTime, data_registros[2].localTime, data_registros[1].localTime, 
-      data_registros[0].localTime], this.barChartData[0].data = [data_registros[9].temperatura, data_registros[8].temperatura, 
-      data_registros[7].temperatura, data_registros[6].temperatura, data_registros[5].temperatura, 
-      data_registros[4].temperatura, data_registros[3].temperatura, data_registros[2].temperatura, 
-      data_registros[1].temperatura, data_registros[0].temperatura]));
+      data_registros[0].localTime], this.barChartData[0].data = [data_registros[9].humedad, data_registros[8].humedad, 
+      data_registros[7].humedad, data_registros[6].humedad, data_registros[5].humedad, 
+      data_registros[4].humedad, data_registros[3].humedad, data_registros[2].humedad, 
+      data_registros[1].humedad, data_registros[0].humedad]));
 
   }
   ngOnInit() {

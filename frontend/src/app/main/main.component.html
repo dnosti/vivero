@@ -45,12 +45,15 @@
                 </div>
                 <div *ngIf="humedad">
                     <h4 class="titulo-graficos border-bottom">Registros de Humedad:</h4>
+                    <app-graph-hum></app-graph-hum>
                 </div>
                 <div *ngIf="luz">
                     <h4 class="titulo-graficos border-bottom">Registros de Luz:</h4>
+                    <app-graph-luz></app-graph-luz>
                 </div>
                 <div *ngIf="co2">
                     <h4 class="titulo-graficos border-bottom">Registros de CO2:</h4>
+                    <app-graph-co2></app-graph-co2>
                 </div>
             </div>
         </div>

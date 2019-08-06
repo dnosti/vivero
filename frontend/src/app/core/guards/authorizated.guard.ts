@@ -23,7 +23,7 @@ export class AuthorizatedGuard implements CanActivate {
     }
 
     // not logged in so redirect to main page
-    this.router.navigate(['']);
+    this.router.navigate(['/login']);
     return false;
   }
 }

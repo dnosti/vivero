@@ -3,6 +3,7 @@ import { Configvalores } from 'src/configvalores';
 import { FormGroup, FormControl } from '@angular/forms';
 import { HttpServiceService } from 'src/http-service.service';
 
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -42,13 +43,12 @@ export class AdminComponent implements OnInit {
     let co2_max = this.configForm.get("co2_max").value;
     let co2_min = this.configForm.get("co2_min").value; 
     this.service.updataDataConfig(vent, inund, temp_max, temp_min, hum_max,
-      hum_min, luz_max, luz_min, co2_max, co2_min).subscribe((data: Configvalores) =>         
+      hum_min, luz_max, luz_min, co2_max, co2_min).subscribe((data: Configvalores) =>  
         this.configForm.setValue(data)
         /*this.configForm.reset()*/
-      )
+       )
   }
 
   ngOnInit() {
   }
-
 }

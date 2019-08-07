@@ -4,6 +4,7 @@ import { Sensores } from 'src/sensores';
 import { Configvalores } from 'src/configvalores';
 import { Registros } from 'src/registros';
 
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -23,9 +24,10 @@ export class MainComponent implements OnInit {
   
   constructor(private service: HttpServiceService) {
     this.service.getDataSensores()
-      .subscribe((data_sensores: Array<Sensores>) => this.sensores = data_sensores);
+    .subscribe((data_sensores: Array<Sensores>) => this.sensores = data_sensores);
+    
     this.service.getDataConfig()
-      .subscribe((data_config: Array<Configvalores>) => this.configvalores = data_config);
+     .subscribe((data_config: Array<Configvalores>) => this.configvalores = data_config);
   }
 
   showDataSensores() {
@@ -44,7 +46,6 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.showDataConfig();
     this.showDataRegistros();
   }
 

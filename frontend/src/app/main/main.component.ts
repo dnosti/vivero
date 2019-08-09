@@ -26,7 +26,6 @@ export class MainComponent implements OnInit {
   /* Valores de configuración */
   data: any;
   dataSubscription: any;
-  dummy: string;
   /* ************************ */
   
   constructor(private service: HttpServiceService, private dataService: CommunicationserviceService) {

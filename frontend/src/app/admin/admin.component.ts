@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Configvalores } from 'src/configvalores';
 import { FormGroup, FormControl } from '@angular/forms';
 import { HttpServiceService } from 'src/http-service.service';
+import { CommunicationserviceService } from '../communicationservice.service';
 
 
 @Component({
@@ -26,7 +27,7 @@ export class AdminComponent implements OnInit {
     co2_min: new FormControl(),
   })
 
-  constructor(private service: HttpServiceService) {
+  constructor(private service: HttpServiceService, private dataService: CommunicationserviceService) {
     this.service.getDataConfig().subscribe((data: Configvalores) =>         
     this.configForm.setValue(data));
   }
@@ -44,7 +45,8 @@ export class AdminComponent implements OnInit {
     let co2_min = this.configForm.get("co2_min").value; 
     this.service.updataDataConfig(vent, inund, temp_max, temp_min, hum_max,
       hum_min, luz_max, luz_min, co2_max, co2_min).subscribe((data: Configvalores) =>  
-        this.configForm.setValue(data)
+        this.dataService.changeData(data)
+        /* this.configForm.setValue(data) */
         /*this.configForm.reset()*/
        )
   }

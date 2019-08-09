@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpServiceService } from 'src/http-service.service';
 import { Sensores } from 'src/sensores';
-import { Configvalores } from 'src/configvalores';
 import { Registros } from 'src/registros';
+import { CommunicationserviceService } from '../communicationservice.service';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { Registros } from 'src/registros';
 export class MainComponent implements OnInit {
 
   sensores: Array<Sensores>;
-  configvalores: Array<Configvalores>;
+  /* configvalores: Array<Configvalores>; */
   registros: Array<Registros>;
 
   temperatura: boolean = true;
@@ -21,23 +21,26 @@ export class MainComponent implements OnInit {
   luz: boolean = false;
   co2: boolean = false;
   tabla: boolean = false;
+
+
+  /* Valores de configuración */
+  data: any;
+  dataSubscription: any;
+  dummy: string;
+  /* ************************ */
   
-  constructor(private service: HttpServiceService) {
+  constructor(private service: HttpServiceService, private dataService: CommunicationserviceService) {
     this.service.getDataSensores()
     .subscribe((data_sensores: Array<Sensores>) => this.sensores = data_sensores);
     
-    this.service.getDataConfig()
+    /* this.service.getDataConfig()
      .subscribe((data_config: Array<Configvalores>) => this.configvalores = data_config);
+     */
   }
 
   showDataSensores() {
     this.service.getDataSensores()
       .subscribe((data_sensores: Array<Sensores>) => this.sensores = data_sensores);
-  }
-
-  showDataConfig() {
-    this.service.getDataConfig()
-      .subscribe((data_config: Array<Configvalores>) => this.configvalores = data_config);
   }
 
   showDataRegistros() {
@@ -47,6 +50,20 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.showDataRegistros();
+    this.dataService.dataPromise()
+    .then((latestData) => this.dataSubscription = latestData
+    .subscribe((data) => this.doStuff(data))  
+    )
+  }
+
+  ngOnDestroy(){
+    this.dataSubscription.unsubscribe();
+  }
+
+  doStuff(data: any){
+    this.data = data;
+    this.service.getDataConfig()
+      .subscribe((data) => this.data = data)
   }
 
   showTemp() {

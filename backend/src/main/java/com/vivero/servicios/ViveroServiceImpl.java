@@ -67,7 +67,7 @@ public class ViveroServiceImpl implements ViveroService{
 		while(true) {
 			Registro reg = new Registro();
 			try {
-				InputStream fis = new FileInputStream("/home/dardo/vivero/backend/src/main/resources/sensores.txt");
+				InputStream fis = new FileInputStream("../backend/src/main/resources/sensores.txt");
 				BufferedReader br = new BufferedReader(new InputStreamReader(fis));
 				
 				try {
